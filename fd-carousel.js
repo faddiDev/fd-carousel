@@ -7,7 +7,9 @@ for(var jum=0;jum<document.getElementsByClassName("fd-carousel").length;jum++) {
 	var src = carousel.getAttribute("src-carousel").split(";");
 	
 	function carousels(i) {
-		carousel.removeChild(carousel.childNodes[0]);
+		if(carousel.hasChildNodes()) {
+			carousel.removeChild(carousel.childNodes[0]);
+		}
 		img.setAttribute("src", src[i]);
 		img.setAttribute("max-width", "100%");
 		img.setAttribute("width", width);
